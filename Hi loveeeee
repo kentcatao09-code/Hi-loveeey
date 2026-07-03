@@ -6,73 +6,111 @@
 <title>Hi Loveeeee ❤️</title>
 
 <style>
+
 body{
-    margin:0;
-    background-color:#ffdbe8;
-    color:#333;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    overflow-x:hidden;
-
-    background-image:
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ctext x='20' y='40' font-size='20' fill='white'%3E♡%3C/text%3E%3C/svg%3E");
-    background-repeat:repeat;
-}
-
-.container{
-    padding:30px;
+margin:0;
+padding:20px;
+background:#ffdbe8;
+font-family:Arial,sans-serif;
+text-align:center;
+overflow-x:hidden;
 }
 
 h1{
-    color:#ff6fa5;
+color:#ff5c93;
 }
 
 button{
-    padding:15px 30px;
-    font-size:18px;
-    border:none;
-    border-radius:30px;
-    background:#ff6fa5;
-    color:white;
-    cursor:pointer;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff5c93;
+color:white;
+cursor:pointer;
 }
 
 #message{
-    display:none;
-    max-width:800px;
-    margin:auto;
-    text-align:left;
-    line-height:1.8;
-    white-space:pre-wrap;
+display:none;
+max-width:800px;
+margin:auto;
+text-align:left;
+line-height:1.8;
+white-space:pre-wrap;
 }
 
 .heart{
-    position:fixed;
-    bottom:-20px;
-    animation:float 8s linear forwards;
+position:fixed;
+bottom:-20px;
+animation:float 8s linear forwards;
 }
 
 @keyframes float{
-    from{
-        transform:translateY(0);
-        opacity:1;
-    }
-    to{
-        transform:translateY(-100vh);
-        opacity:0;
-    }
+from{
+transform:translateY(0);
+opacity:1;
 }
+to{
+transform:translateY(-100vh);
+opacity:0;
+}
+}
+
+#photoContainer{
+display:none;
+text-align:center;
+margin-top:30px;
+}
+
+#ourPhoto{
+width:90%;
+max-width:400px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+}
+
+.fadeOut{
+animation:fadeOut 2s forwards;
+}
+
+@keyframes fadeOut{
+from{
+opacity:1;
+}
+to{
+opacity:0;
+}
+}
+
+#finalWords{
+display:none;
+font-size:35px;
+color:#ff4f8b;
+font-weight:bold;
+margin-top:30px;
+animation:showText 2s;
+}
+
+@keyframes showText{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <h1>Hi Loveeeee ❤️</h1>
 
 <button onclick="openSurprise()">
-click my ❤️"
+Click My ❤️
 </button>
 
 <br><br>
@@ -82,6 +120,7 @@ click my ❤️"
 </audio>
 
 <div id="message">
+
 Hi Nheslyn jane liray ano
 (Love)
 
@@ -135,9 +174,32 @@ ato ato raning kalangi nako ug ka childish love ha HAHAHAHA
 astig raba ko nohhh! HAHAHAHHAA
 
 ILOVEEEYOUUUUUU mwuaaaaa!!
-    
+
+
+
+<br><br><br>
+
+<center>
+
+<button onclick="showPhoto()">
+❤️ One Last Click ❤️
+</button>
+
+<div id="photoContainer">
+
+<br>
+
+<img
+id="ourPhoto"
+src="file_00000000ff3872308e124ba0675ff57c.png">
+
+<div id="finalWords">
+Love, kayo tika subra ❤️
+</div>
 
 </div>
+
+</center>
 
 </div>
 
@@ -159,15 +221,35 @@ heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(20+Math.random()*20)+"px";
+heart.style.fontSize=(20+Math.random()*25)+"px";
 
 document.body.appendChild(heart);
 
-setTimeout(()=>{
+setTimeout(function(){
 heart.remove();
 },8000);
 
 },500);
+
+}
+
+function showPhoto(){
+
+document.getElementById("photoContainer").style.display="block";
+
+setTimeout(function(){
+
+document.getElementById("ourPhoto").classList.add("fadeOut");
+
+setTimeout(function(){
+
+document.getElementById("ourPhoto").style.display="none";
+
+document.getElementById("finalWords").style.display="block";
+
+},2000);
+
+},4000);
 
 }
 
