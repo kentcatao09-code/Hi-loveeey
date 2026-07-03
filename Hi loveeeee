@@ -82,7 +82,6 @@ Open My Surprise ❤️
 </audio>
 
 <div id="message">
-
 Hi Nheslyn jane liray ano
 (Love)
 
@@ -136,6 +135,7 @@ ato ato raning kalangi nako ug ka childish love ha HAHAHAHA
 astig raba ko nohhh! HAHAHAHHAA
 
 ILOVEEEYOUUUUUU mwuaaaaa!!
+    
 
 </div>
 
@@ -155,7 +155,7 @@ let heart=document.createElement("div");
 
 heart.className="heart";
 
-heart.innerHTML="❤️";
+heart.innerHTML="❤️✨";
 
 heart.style.left=Math.random()*100+"vw";
 
