@@ -149,17 +149,49 @@ document.getElementById("message").style.display="block";
 
 document.getElementById("music").play();
 
+const loveMessages = [
+  "I Love You ",
+  "I Miss You ",
+  "Love Tika subra ",
+  "Thinking of You ",
+  "sumbagay oh "
+];
+
 setInterval(function(){
 
 let heart=document.createElement("div");
 
 heart.className="heart";
-
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-
 heart.style.fontSize=(20+Math.random()*20)+"px";
+
+heart.onclick=function(){
+
+    let popup=document.createElement("div");
+
+    popup.innerHTML=
+    loveMessages[Math.floor(Math.random()*loveMessages.length)];
+
+    popup.style.position="fixed";
+    popup.style.left="50%";
+    popup.style.top="50%";
+    popup.style.transform="translate(-50%,-50%)";
+    popup.style.background="#ff6fa5";
+    popup.style.color="white";
+    popup.style.padding="15px 25px";
+    popup.style.borderRadius="20px";
+    popup.style.fontSize="22px";
+    popup.style.fontWeight="bold";
+    popup.style.zIndex="9999";
+
+    document.body.appendChild(popup);
+
+    setTimeout(()=>{
+      popup.remove();
+    },2500);
+};
 
 document.body.appendChild(heart);
 
@@ -168,7 +200,6 @@ heart.remove();
 },8000);
 
 },500);
-
 }
 
 </script>
