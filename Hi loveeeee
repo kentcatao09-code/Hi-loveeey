@@ -72,7 +72,7 @@ button{
 <h1>Hi Loveeeee ❤️</h1>
 
 <button onclick="openSurprise()">
-Open My Surprise ❤️
+click my ❤️
 </button>
 
 <br><br>
@@ -155,7 +155,7 @@ let heart=document.createElement("div");
 
 heart.className="heart";
 
-heart.innerHTML="❤️✨";
+heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
