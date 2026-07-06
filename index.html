@@ -189,9 +189,21 @@ ILOVEEEYOUUUUUU mwuaaaaa!!
 
 <br>
 
+<video
+id="ourVideo"
+width="90%"
+style="max-width:400px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.3);"
+autoplay
+controls>
+
+<source src="snapsave-app_4449863481957931_hd.mp4" type="video/mp4">
+
+</video>
+
 <img
 id="ourPhoto"
-src="file_00000000ff3872308e124ba0675ff57c.png">
+src="file_00000000ff3872308e124ba0675ff57c.png"
+style="display:none;width:90%;max-width:400px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.3);">
 
 <div id="finalWords">
 Love, kayo tika subra!!
@@ -237,19 +249,33 @@ function showPhoto(){
 
 document.getElementById("photoContainer").style.display="block";
 
+let video=document.getElementById("ourVideo");
+
+video.play();
+
+video.onended=function(){
+
+video.style.display="none";
+
+let photo=document.getElementById("ourPhoto");
+
+photo.style.display="block";
+
 setTimeout(function(){
 
-document.getElementById("ourPhoto").classList.add("fadeOut");
+photo.classList.add("fadeOut");
 
 setTimeout(function(){
 
-document.getElementById("ourPhoto").style.display="none";
+photo.style.display="none";
 
 document.getElementById("finalWords").style.display="block";
 
 },2000);
 
 },4000);
+
+};
 
 }
 
